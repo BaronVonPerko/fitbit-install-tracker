@@ -15,6 +15,7 @@ class CreateFitbitAppsTable extends Migration
     {
         Schema::create('fitbit_apps', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('tracking_id', 32)->nullable();
             $table->unsignedInteger('user_id')->references('id')->on('users');
             $table->timestamps();
         });
